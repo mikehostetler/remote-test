@@ -1,4 +1,4 @@
-var Test = require('./test');
+var Test = require('../test');
 
 var remoteTest = new Test('nodejs');
 

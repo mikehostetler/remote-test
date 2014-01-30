@@ -15,6 +15,10 @@ var Command = function(remote, command, args, env) {
     self.emit('close', code);
   });
 
+  remote.on('close', function(code) {
+    self.emit('close', code);
+  });
+
   remote.on('stdout', function(data) {
     self.stdout.write(data);
   });
