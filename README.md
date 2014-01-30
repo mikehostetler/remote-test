@@ -6,6 +6,9 @@ var Test = require('remote-test');
 
 var remoteTest = new Test('nodejs');
 
+//direct access to duplexemitter if needed
+//remoteTest.remote
+
 remoteTest.on('ready', function () {
   var uptime = remoteTest.spawn('uptime', [], {});
 
