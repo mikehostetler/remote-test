@@ -1,4 +1,4 @@
-remote-spawn
+remote-test
 ============
 
 ``` js
