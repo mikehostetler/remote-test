@@ -11,13 +11,13 @@ var Command = function(remote, command, args, env) {
   this.stdout = new stream.PassThrough();
   this.stderr = new stream.PassThrough();
 
-  remote.on('done', function(code) {
-    self.emit('close', code);
-  });
+  remote.on('done', theEnd);
+  remote.on('close', theEnd);
 
-  remote.on('close', function(code) {
+  function theEnd(code) {
+    remote.removeAllListeners();
     self.emit('close', code);
-  });
+  }
 
   remote.on('stdout', function(data) {
     self.stdout.write(data);
