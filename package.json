@@ -1,0 +1,23 @@
+{
+  "name": "remote-test",
+  "description": "Remote test.",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/apocas/dockerode.git"
+  },
+  "dependencies": {
+    "duplex-emitter": "*"
+  },
+  "devDependencies": {
+    "chai": "~1.7.0",
+    "mocha": "~1.12.0"
+  },
+  "main": "./test",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha -R spec"
+  },
+  "engines": {
+    "node": ">= 0.8"
+  }
+}
