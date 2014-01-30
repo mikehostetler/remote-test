@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "http://github.com/apocas/dockerode.git"
+    "url": "http://github.com/BrowserSwarm/remote-test"
   },
   "dependencies": {
     "duplex-emitter": "*",
