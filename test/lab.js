@@ -15,6 +15,5 @@ remoteTest.on('ready', function () {
 
   uptime.on('close', function (code) {
     console.log('command finished with code ' + code);
-    process.exit(code);
   });
 });
