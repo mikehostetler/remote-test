@@ -19,9 +19,11 @@ var Test = function(type) {
 
   this.remote = duplexEmitter(this.socket);
 
-  this.remote.emit('init', type);
+  this.remote.on('handshaked', function() {
+    self.remote.emit('init', type);
+  });
 
-  this.remote.on('ready', function() {
+  this.remote.on('initialised', function() {
     self.emit('ready');
   });
 };
@@ -30,6 +32,10 @@ sys.inherits(Test, events.EventEmitter);
 
 Test.prototype.spawn = function(command, args, env) {
   return new Command(this.remote, command, args, env);
+};
+
+Test.prototype.finish = function() {
+  this.socket.end();
 };
 
 module.exports = Test;

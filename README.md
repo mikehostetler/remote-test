@@ -22,6 +22,8 @@ remoteTest.on('ready', function () {
 
   uptime.on('close', function (code) {
     console.log('command finished with code ' + code);
+    //continue your command spree... ending with remoteTest.finish()
+    //check test/lab.js
   });
 });
 ```
